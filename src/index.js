@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Sitrep from './Sitrep';
 import './index.css';
+import 'basscss/css/basscss.css';
 
 ReactDOM.render(
-  <App />,
+  <Sitrep />,
   document.getElementById('root')
 );

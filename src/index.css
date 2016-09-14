@@ -5,3 +5,65 @@ body {
   padding: 0;
   font-family: 'Khula', sans-serif;
 }
+
+a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.a-diamond-crop {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin: 16px;
+  transform: rotate(45deg);
+}
+
+.a-diamond-crop-img {
+  width: calc(70px + 32px); /* width + margin * 2 */
+  height: calc(70px + 32px);
+  margin: -16px;
+  transform: rotate(-45deg);
+}
+
+.a-avatar-icon {
+  width: 27px;
+  height: 27px;
+  top: 8px;
+  right: 8px;
+}
+
+.a-action-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.color-gry { color: #717882; }
+.bg-gry { background-color: #717882; }
+.border-gry { border-color: #717882; }
+
+.color-primary { color: #50E3C2; }
+.bg-primary { background-color: #50E3C2; }
+
+.color-accent-green { color: #00D767; }
+.color-accent-blue { color: #1FB5F6; }
+.color-accent-orange { color: #FF7024; }
+
+.font-size-1 { font-size: 10px; }
+.font-size-2 { font-size: 14px; }
+.font-size-3 { font-size: 18px; }
+.font-size-4 { font-size: 22px; }
+.font-size-5 { font-size: 28px; }
+.font-size-6 { font-size: 32px; }
+.line-height-1 { line-height: 1; }
+.semi-bold { font-weight: 500; }
+
+.cursor-pointer { cursor: pointer; }
+
+.bg-size-cover { background-size: cover; }
+.bg-position-center { background-position: center; }
+
+/** Extends BassCSS */
+.rotate-45 { transform: rotate(45deg); }
+.rotate-45n { transform: rotate(-45deg); }
+.caps { letter-spacing: 0.1em !important; }

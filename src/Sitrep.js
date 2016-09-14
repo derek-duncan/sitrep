@@ -3,55 +3,62 @@ import './Sitrep.css';
 import logo from '../assets/sitrep-logo.svg';
 import checkedStatusIcon from '../assets/status-checked-icon.svg';
 import reportIcon from '../assets/report-icon.svg';
-const kanyeLogo = "http://img.ulximg.com/image/300x300/artist/1392767355_2048795ba3f4dc991a1fc473b51f1d8b.jpg/aaf8bc7f6eab3f73df8d833d2c07308c/1392767355_kanye_west_46.jpg";
+import calendarIcon from '../assets/calendar-icon.svg';
+import highFiveIcon from '../assets/high-five-icon.svg';
+import handPointerIcon from '../assets/hand-pointer-icon.svg';
+const kanyeLogo = "https://goo.gl/99123r";
 
 class Sitrep extends Component {
   render() {
     return (
-      <div className="center p3">
+      <div className="center p3 font-size-3">
         <img src={logo} alt="Sitrep" className="" />
         <div className="left-align mx-auto" style={{ maxWidth: 600 }}>
-          <div className="my3">
-            <div className="flex items-start">
-              <div className="relative">
-                <img
-                  src={kanyeLogo}
-                  alt="Avatar"
-                  className=""
-                  style={{ maxWidth: 70, height: 'auto' }} />
-                <img
-                  src={checkedStatusIcon}
-                  role="presentation"
-                  className="absolute top-0 right-0"
-                  style={{ width: 27, height: 27 }} />
+          <div className="my2 py2 border-bottom border-gry">
+            <div className="sm-flex items-start">
+              <div className="relative mb3 sm-m0">
+                <div className="a-diamond-crop">
+                  <div className="a-diamond-crop-img bg-size-cover bg-position-center" style={{ backgroundImage: `url(${kanyeLogo})` }}></div>
+                </div>
+                <img src={checkedStatusIcon} role="presentation" className="a-avatar-icon absolute" />
               </div>
-              <div className="pl2 left-align">
-                <h3 className="m0 p0">Derek Duncan</h3>
+              <div className="sm-pl2 left-align">
+                <h3 className="m0 p0 font-size-5 line-height-1">Derek Duncan</h3>
                 <p className="m0 p0">You know whiskey? Well, yeah… I had some.</p>
-                <span className="block bold">12:21 PM</span>
+                <div className="font-size-2 color-gry">
+                  <a href="mailto:mail@derekduncan.me">mail@derekduncan.me</a>
+                  <span className="px1">|</span>
+                  <a href="tel:9188633601" className="">918-863-3601</a>
+                  <span className="px1">|</span>
+                  <span className="">12:21 PM</span>
+                </div>
               </div>
             </div>
-            <div className="flex mt2">
-              <div className="col-6">
-                <h4 className="m0 mb2 p0">Reports</h4>
-                <div className="flex items-start pb1">
-                  <img src={reportIcon} role="presentation" className="mr2" style={{ width: 25 }} />
+            <div className="flex flex-wrap mt2">
+              <div className="col-12 sm-col-6 mb2">
+                <h4 className="m0 mb1 p0 font-size-4">Reports</h4>
+                <div className="flex items-center mb1 cursor-pointer">
+                  <img src={reportIcon} role="presentation" className="a-action-icon mr1" />
                   <div>
-                    <p className="p0 m0 h6">1:07 PM on September 14th, 2016</p>
-                    <h3 className="p0 m0">Daily Standup</h3>
+                    <p className="p0 m0 font-size-2 color-gry">1:07 PM on September 14th, 2016</p>
+                    <a className="p0 m0 font-size-4 line-height-1">Daily Standup</a>
                   </div>
                 </div>
+                <span className="block mt2 cursor-pointer">Expand 3 more +</span>
               </div>
-              <div className="col-6">
-                <h4 className="m0 mb2 p0">Actions</h4>
-                <div className="pb1">
-                  <h3 className="p0 m0">Request a meeting.</h3>
+              <div className="col-12 sm-col-6 mb2">
+                <h4 className="m0 mb1 p0 font-size-4">Actions</h4>
+                <div className="flex items-center cursor-pointer">
+                  <img src={calendarIcon} role="presentation" className="a-action-icon mr1" />
+                  <a className="p0 m0 font-size-4">Request a meeting.</a>
                 </div>
-                <div className="pb1">
-                  <h3 className="p0 m0">Give a high-five!</h3>
+                <div className="flex items-center cursor-pointer">
+                  <img src={highFiveIcon} role="presentation" className="a-action-icon mr1" />
+                  <a className="p0 m0 font-size-4">Give a high-five!</a>
                 </div>
-                <div className="pb1">
-                  <h3 className="p0 m0">Send a poke.</h3>
+                <div className="flex items-center cursor-pointer">
+                  <img src={handPointerIcon} role="presentation" className="a-action-icon mr1" />
+                  <a className="p0 m0 font-size-4">Send a poke.</a>
                 </div>
               </div>
             </div>

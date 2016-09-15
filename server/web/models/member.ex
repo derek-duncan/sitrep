@@ -6,8 +6,7 @@ defmodule Sitrep.Member do
     field :last_name, :string
     field :email, :string
     field :timezone, :string
-    field :phone, :integer
-
+    field :phone, :string
     belongs_to :team, Sitrep.Team
 
     timestamps()
@@ -18,7 +17,7 @@ defmodule Sitrep.Member do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:first_name, :last_name, :email, :timezone, :phone])
-    |> validate_required([:first_name, :last_name, :email, :timezone, :phone])
+    |> cast(params, [:first_name, :last_name, :email, :timezone, :phone, :team_id])
+    |> validate_required([:first_name, :last_name, :email, :timezone, :phone, :team_id])
   end
 end

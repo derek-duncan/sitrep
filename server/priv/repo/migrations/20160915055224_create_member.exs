@@ -7,10 +7,12 @@ defmodule Sitrep.Repo.Migrations.CreateMember do
       add :last_name, :string
       add :email, :string
       add :timezone, :string
-      add :phone, :integer
+      add :phone, :string
+      add :team_id, references(:teams, on_delete: :nothing)
 
       timestamps()
     end
+    create index(:members, [:team_id])
 
   end
 end

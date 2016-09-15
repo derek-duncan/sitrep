@@ -15,7 +15,7 @@ defmodule Sitrep.MemberController do
       {:ok, member} ->
         conn
         |> put_status(:created)
-        |> put_resp_header("location", member_path(conn, :show, member))
+        |> put_resp_header("location", team_member_path(conn, :show, member))
         |> render("show.json", member: member)
       {:error, changeset} ->
         conn

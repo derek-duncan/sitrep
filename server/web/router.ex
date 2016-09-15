@@ -16,8 +16,9 @@ defmodule Sitrep.Router do
   scope "/api", Sitrep do
     pipe_through :api # Use the default browser stack
 
-    resources "/teams", TeamController, except: [:new, :edit]
-    resources "/members", MemberController, except: [:new, :edit]
+    resources "/teams", TeamController, except: [:new, :edit] do
+      resources "/members", MemberController, except: [:new, :edit]
+    end
   end
 
   # Other scopes may use custom stacks.

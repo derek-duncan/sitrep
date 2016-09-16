@@ -9,10 +9,11 @@ import handPointerIcon from '../../../assets/hand-pointer-icon.svg';
 const kanyeLogo = "https://goo.gl/99123r";
 
 class Member extends Component {
-  getDefaultProps() {}
-  componentWillMount() {}
-  componentDidMount() {}
+  //componentWillMount() {}
+  //componentDidMount() {}
   render() {
+    const { name, email, phone, timezone } = this.props.member;
+
     return (
       <div className="my2 py2 border-bottom border-gry">
         <div className="sm-flex items-start">
@@ -68,6 +69,7 @@ class Member extends Component {
 }
 
 Member.propTypes = {
+  member: PropTypes.object.required,
 };
 
 export default Member;

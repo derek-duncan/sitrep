@@ -17,4 +17,12 @@ defmodule Sitrep.Team do
     |> cast(params, [:name])
     |> validate_required([:name])
   end
+
+  defimpl Poison.Encoder, for: Sitrep.Team do
+    def encode(model, opts) do
+      model
+      |> Map.take([:name, :members])
+      |> Poison.Encoder.encode(opts)
+    end
+  end
 end

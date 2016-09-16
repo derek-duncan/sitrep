@@ -20,4 +20,12 @@ defmodule Sitrep.Member do
     |> cast(params, [:first_name, :last_name, :email, :timezone, :phone])
     |> validate_required([:first_name, :last_name, :email, :timezone, :phone])
   end
+
+  defimpl Poison.Encoder, for: Sitrep.Member do
+    def encode(model, opts) do
+      model
+      |> Map.take([:first_name, :last_name, :email, :timezone, :phone])
+      |> Poison.Encoder.encode(opts)
+    end
+  end
 end

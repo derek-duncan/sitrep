@@ -5,6 +5,7 @@ defmodule Sitrep.TeamController do
 
   def index(conn, _params) do
     teams = Repo.all(Team)
+
     render(conn, "index.json", teams: teams)
   end
 
@@ -26,6 +27,8 @@ defmodule Sitrep.TeamController do
 
   def show(conn, %{"id" => id}) do
     team = Repo.get!(Team, id)
+		|> Repo.preload(:members)
+
     render(conn, "show.json", team: team)
   end
 

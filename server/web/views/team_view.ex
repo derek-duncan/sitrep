@@ -10,7 +10,9 @@ defmodule Sitrep.TeamView do
   end
 
   def render("team.json", %{team: team}) do
+    IO.inspect team.members
     %{id: team.id,
-      name: team.name}
+      name: team.name,
+      members: team.members}
   end
 end

@@ -3,7 +3,6 @@ defmodule Sitrep.MemberController do
 
   alias Sitrep.Member
 
-  plug :scrub_params, "member" when action in [:create, :update]
   plug :assign_team
 
   def index(conn, _params) do

@@ -24,7 +24,7 @@ defmodule Sitrep.Member do
   defimpl Poison.Encoder, for: Sitrep.Member do
     def encode(model, opts) do
       model
-      |> Map.take([:first_name, :last_name, :email, :timezone, :phone])
+      |> Map.take([:id, :first_name, :last_name, :email, :timezone, :phone])
       |> Poison.Encoder.encode(opts)
     end
   end

@@ -5,6 +5,7 @@ defmodule Sitrep.TeamController do
 
   def index(conn, _params) do
     teams = Repo.all(Team)
+		|> Repo.preload(:members)
 
     render(conn, "index.json", teams: teams)
   end

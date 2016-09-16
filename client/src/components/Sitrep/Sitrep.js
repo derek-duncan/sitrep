@@ -13,15 +13,17 @@ class Sitrep extends Component {
     };
   }
   componentDidMount() {
-    fetch('http://localhost:4000/api/teams/1')
+    fetch('/api/teams/1')
       .then((data) => data.json())
-      .then((team) => this.setState({ data: team }));
+      .then((response) => {
+        this.setState({ team: response.data })
+      });
   }
   render() {
     if (!this.state.team.members) return <p>Loading...</p>;
 
-    const members = this.state.team.members.map((member) => {
-      return <Member member={member} />;
+    const members = this.state.team.members.map((member, i) => {
+      return <Member member={member} key={i} />;
     });
 
     return (

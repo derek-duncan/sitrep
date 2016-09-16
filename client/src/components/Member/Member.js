@@ -12,7 +12,9 @@ class Member extends Component {
   //componentWillMount() {}
   //componentDidMount() {}
   render() {
-    const { name, email, phone, timezone } = this.props.member;
+    const { first_name, last_name, email, phone, timezone } = this.props.member;
+    const name = `${first_name} ${last_name}`;
+    const purePhone = phone.replace(/[^1-9]/g, '');
 
     return (
       <div className="my2 py2 border-bottom border-gry">
@@ -24,12 +26,12 @@ class Member extends Component {
             <img src={checkedStatusIcon} role="presentation" className="a-avatar-icon absolute" />
           </div>
           <div className="sm-pl2 left-align">
-            <h3 className="m0 p0 font-size-5 line-height-1">Derek Duncan</h3>
+            <h3 className="m0 p0 font-size-5 line-height-1">{name}</h3>
             <p className="m0 p0">You know whiskey? Well, yeah… I had some.</p>
             <div className="font-size-2 color-gry">
-              <a href="mailto:mail@derekduncan.me">mail@derekduncan.me</a>
+              <a href={`mailto:${email}`}>{email}</a>
               <span className="px1">|</span>
-              <a href="tel:9188633601" className="">918-863-3601</a>
+              <a href={`tel:${purePhone}`} className="">{phone}</a>
               <span className="px1">|</span>
               <span className="">12:21 PM</span>
             </div>
@@ -69,7 +71,7 @@ class Member extends Component {
 }
 
 Member.propTypes = {
-  member: PropTypes.object.required,
+  member: PropTypes.object,
 };
 
 export default Member;

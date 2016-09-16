@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import './Member.css';
 
+import Time from '../Time/Time';
 import checkedStatusIcon from '../../../assets/status-checked-icon.svg';
 import reportIcon from '../../../assets/report-icon.svg';
 import calendarIcon from '../../../assets/calendar-icon.svg';
@@ -9,12 +10,10 @@ import handPointerIcon from '../../../assets/hand-pointer-icon.svg';
 const kanyeLogo = "https://goo.gl/99123r";
 
 class Member extends Component {
-  //componentWillMount() {}
-  //componentDidMount() {}
   render() {
     const { first_name, last_name, email, phone, timezone } = this.props.member;
     const name = `${first_name} ${last_name}`;
-    const purePhone = phone.replace(/[^1-9]/g, '');
+    const phoneNumber = parseInt(phone.replace(/[^1-9]/g, ''), 10);
 
     return (
       <div className="my2 py2 border-bottom border-gry">
@@ -31,9 +30,9 @@ class Member extends Component {
             <div className="font-size-2 color-gry">
               <a href={`mailto:${email}`}>{email}</a>
               <span className="px1">|</span>
-              <a href={`tel:${purePhone}`} className="">{phone}</a>
+              <a href={`tel:${phoneNumber}`} className="">{phone}</a>
               <span className="px1">|</span>
-              <span className="">12:21 PM</span>
+              <span className=""><Time timeZone={timezone} /></span>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ defmodule Sitrep.Member do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:first_name, :last_name, :email, :timezone, :phone, :team_id])
-    |> validate_required([:first_name, :last_name, :email, :timezone, :phone, :team_id])
+    |> cast(params, [:first_name, :last_name, :email, :timezone, :phone])
+    |> validate_required([:first_name, :last_name, :email, :timezone, :phone])
   end
 end

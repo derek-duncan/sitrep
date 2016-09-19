@@ -2,65 +2,47 @@ import React, { PropTypes, Component } from 'react';
 import './Member.css';
 
 import Time from '../Time/Time';
-import checkedStatusIcon from '../../../assets/status-checked-icon.svg';
-import reportIcon from '../../../assets/report-icon.svg';
-import calendarIcon from '../../../assets/calendar-icon.svg';
-import highFiveIcon from '../../../assets/high-five-icon.svg';
-import handPointerIcon from '../../../assets/hand-pointer-icon.svg';
-const kanyeLogo = "https://goo.gl/99123r";
+import Icon from '../Icon/Icon';
+import CircleIcon from '../CircleIcon/CircleIcon';
 
 class Member extends Component {
   render() {
-    const { first_name, last_name, email, phone, timezone } = this.props.member;
+    const { first_name, last_name, timezone } = this.props.member;
     const name = `${first_name} ${last_name}`;
-    const phoneNumber = parseInt(phone.replace(/[^1-9]/g, ''), 10);
+    const randomImage = "https://source.unsplash.com/category/people/100x100";
 
     return (
-      <div className="my2 py2 border-bottom border-gry">
-        <div className="sm-flex items-start">
-          <div className="relative mb3 sm-m0">
+      <div className="left-align">
+        <div className="sm-flex items-center bg-dark1">
+          <div className="relative">
             <div className="a-diamond-crop">
-              <div className="a-diamond-crop-img bg-size-cover bg-position-center" style={{ backgroundImage: `url(${kanyeLogo})` }}></div>
+              <div className="a-diamond-crop-img bg-size-cover bg-position-center" style={{ backgroundImage: `url(${randomImage})` }}></div>
             </div>
-            <img src={checkedStatusIcon} role="presentation" className="a-avatar-icon absolute" />
+            <span className="a-avatar-icon absolute">
+              <Icon type="check" style={{ width: 25 }} />
+            </span>
           </div>
-          <div className="sm-pl2 left-align">
-            <h3 className="m0 p0 font-size-5 line-height-1">{name}</h3>
-            <p className="m0 p0">You know whiskey? Well, yeah… I had some.</p>
-            <div className="font-size-2 color-gry">
-              <a href={`mailto:${email}`}>{email}</a>
-              <span className="px1">|</span>
-              <a href={`tel:${phoneNumber}`} className="">{phone}</a>
-              <span className="px1">|</span>
-              <span className=""><Time timeZone={timezone} /></span>
+          <div className="flex justify-between col-12 py1 px2">
+            <div>
+              <h3 className="m0 p0 font-size-4 line-height-1 color-gry-light1">{name}</h3>
+              <p className="m0 p0 font-size-1 color-gry1">Checked in at 10:13 PM</p>
             </div>
-          </div>
-        </div>
-        <div className="flex flex-wrap mt2">
-          <div className="col-12 sm-col-6 mb2">
-            <h4 className="m0 mb1 p0 font-size-4">Reports</h4>
-            <div className="flex items-center mb1 cursor-pointer">
-              <img src={reportIcon} role="presentation" className="a-action-icon mr1" />
-              <div>
-                <p className="p0 m0 font-size-2 color-gry">1:07 PM on September 14th, 2016</p>
-                <a className="p0 m0 font-size-4 line-height-1">Daily Standup</a>
-              </div>
-            </div>
-            <span className="block mt2 cursor-pointer">Expand 3 more +</span>
-          </div>
-          <div className="col-12 sm-col-6 mb2">
-            <h4 className="m0 mb1 p0 font-size-4">Actions</h4>
-            <div className="flex items-center cursor-pointer">
-              <img src={calendarIcon} role="presentation" className="a-action-icon mr1" />
-              <a className="p0 m0 font-size-4">Request a meeting.</a>
-            </div>
-            <div className="flex items-center cursor-pointer">
-              <img src={highFiveIcon} role="presentation" className="a-action-icon mr1" />
-              <a className="p0 m0 font-size-4">Give a high-five!</a>
-            </div>
-            <div className="flex items-center cursor-pointer">
-              <img src={handPointerIcon} role="presentation" className="a-action-icon mr1" />
-              <a className="p0 m0 font-size-4">Send a poke.</a>
+            <div className="flex items-center">
+              <span className="mx1">
+                <Time timeZone={timezone} />
+              </span>
+              <CircleIcon className="mx1" color="light">
+                <Icon type="calendar" />
+              </CircleIcon>
+              <CircleIcon className="mx1" color="light">
+                <Icon type="high-five" />
+              </CircleIcon>
+              <CircleIcon className="mx1" color="light">
+                <Icon type="poke" />
+              </CircleIcon>
+              <CircleIcon className="mx1 hover-rotate-180 transition-transform">
+                <Icon type="down-arrow" />
+              </CircleIcon>
             </div>
           </div>
         </div>

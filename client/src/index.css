@@ -13,16 +13,16 @@ a {
 
 .a-diamond-crop {
   overflow: hidden;
-  width: 70px;
-  height: 70px;
-  margin: 16px;
+  width: 50px;
+  height: 50px;
+  margin: 12px 12px 12px -25px;
   transform: rotate(45deg);
 }
 
 .a-diamond-crop-img {
-  width: calc(70px + 32px); /* width + margin * 2 */
-  height: calc(70px + 32px);
-  margin: -16px;
+  width: calc(50px + 32px); /* width + margin * 2 */
+  height: calc(50px + 32px);
+  margin: -12px;
   transform: rotate(-45deg);
 }
 
@@ -30,7 +30,7 @@ a {
   width: 27px;
   height: 27px;
   top: 8px;
-  right: 8px;
+  right: 0;
 }
 
 .a-action-icon {
@@ -38,18 +38,62 @@ a {
   height: 20px;
 }
 
-.color-gry { color: #717882; }
-.bg-gry { background-color: #717882; }
-.border-gry { border-color: #717882; }
+.color-gry1 { color: #717882; }
+.color-gry1::placeholder { color: #717882; }
+.bg-gry1 { background-color: #717882; }
+.border-gry1 { border-color: #717882; }
+.hover-color-gry1:hover { color: #717882; }
+.hover-bg-gry1:hover { background-color: #717882; }
+
+.color-gry-light1 { color: #D5DDE7; }
+.bg-gry-light1 { background-color: #D5DDE7; }
+.border-gry-light1 { border-color: #D5DDE7; }
+.hover-color-gry-light1:hover { color: #D5DDE7; }
+.hover-bg-gry-light1:hover { background-color: #D5DDE7; }
+
+.color-gry-light2 { color: #EDEFF1; }
+.bg-gry-light2 { background-color: #EDEFF1; }
+.border-gry-light2 { border-color: #EDEFF1; }
+.hover-color-gry-light2:hover { color: #EDEFF1; }
+.hover-bg-gry-light2:hover { background-color: #EDEFF1; }
 
 .color-primary { color: #50E3C2; }
 .bg-primary { background-color: #50E3C2; }
+.border-primary { border-color: #50E3C2; }
+.hover-color-primary:hover { color: #50E3C2; }
+.hover-bg-primary:hover { background-color: #50E3C2; }
 
-.color-accent-green { color: #00D767; }
-.color-accent-blue { color: #1FB5F6; }
-.color-accent-orange { color: #FF7024; }
+.color-blue1 { color: #0064FF; }
+.bg-blue1 { background-color: #0064FF; }
+.border-blue1 { border-color: #0064FF; }
+.hover-color-blue1:hover { color: #0064FF; }
+.hover-bg-blue1:hover { background-color: #0064FF; }
 
-.font-size-1 { font-size: 10px; }
+.color-blue2 { color: #0041A7; }
+.bg-blue2 { background-color: #0041A7; }
+.border-blue2 { border-color: #0041A7; }
+.hover-color-blue2:hover { color: #0041A7; }
+.hover-bg-blue2:hover { background-color: #0041A7; }
+
+.color-dark1 { color: #0E0F10; }
+.bg-dark1 { background-color: #0E0F10; }
+.border-dark1 { border-color: #0E0F10; }
+.hover-color-dark1:hover { color: #0E0F10; }
+.hover-bg-dark1:hover { background-color: #0E0F10; }
+
+.color-dark2 { color: #1D1F23; }
+.bg-dark2 { background-color: #1D1F23; }
+.border-dark2 { border-color: #1D1F23; }
+.hover-color-dark2:hover { color: #1D1F23; }
+.hover-bg-dark2:hover { background-color: #1D1F23; }
+
+.color-dark3 { color: #282C31; }
+.bg-dark3 { background-color: #282C31; }
+.border-dark3 { border-color: #282C31; }
+.hover-color-dark3:hover { color: #282C31; }
+.hover-bg-dark3:hover { background-color: #282C31; }
+
+.font-size-1 { font-size: 12px; }
 .font-size-2 { font-size: 14px; }
 .font-size-3 { font-size: 18px; }
 .font-size-4 { font-size: 22px; }
@@ -60,10 +104,33 @@ a {
 
 .cursor-pointer { cursor: pointer; }
 
-.bg-size-cover { background-size: cover; }
-.bg-position-center { background-position: center; }
-
 /** Extends BassCSS */
 .rotate-45 { transform: rotate(45deg); }
 .rotate-45n { transform: rotate(-45deg); }
+.rotate-90 { transform: rotate(90deg); }
+.rotate-180 { transform: rotate(180deg); }
+.hover-rotate-45:hover { transform: rotate(45deg); }
+.hover-rotate-90:hover { transform: rotate(90deg); }
+.hover-rotate-180:hover { transform: rotate(180deg); }
+
 .caps { letter-spacing: 0.1em !important; }
+
+.transition-color { transition: color 250ms; }
+.transition-bg { transition: background-color 250ms; }
+.transition-opacity { transition: opacity 250ms; }
+.transition-transform { transition: transform 250ms; }
+
+.bg-size-cover { background-size: cover; }
+.bg-position-center { background-position: center; }
+.bg-none { background: none; }
+.outline-none { outline: none; }
+
+.border-top-none { border-top: none; }
+.border-bottom-none { border-bottom: none; }
+.border-left-none { border-left: none; }
+.border-right-none { border-right: none; }
+
+.border-top { border-top: 1px solid; }
+.border-bottom { border-bottom: 1px solid; }
+.border-left { border-left: 1px solid; }
+.border-right { border-right: 1px solid; }

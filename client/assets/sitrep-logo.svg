@@ -5,10 +5,12 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal" font-family="BeyondTheMountains, Beyond The Mountains" letter-spacing="3.55555654" font-size="40">
-        <g id="Desktop-HD" transform="translate(-659.000000, -21.000000)" fill="#1D1F22">
-            <text id="sitrep-logo">
-                <tspan x="660.33333" y="61">Sitrep</tspan>
-            </text>
+        <g id="iteration-2" transform="translate(-659.000000, -21.000000)" fill="#D6DDE7">
+            <g id="header" transform="translate(660.000000, 23.000000)">
+                <text id="sitrep-logo">
+                    <tspan x="0.333330393" y="38">Sitrep</tspan>
+                </text>
+            </g>
         </g>
     </g>
 </svg>

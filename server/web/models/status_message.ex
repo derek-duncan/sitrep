@@ -16,4 +16,12 @@ defmodule Sitrep.StatusMessage do
     |> cast(params, [:message])
     |> validate_required([:message])
   end
+
+  defimpl Poison.Encoder, for: Sitrep.StatusMessage do
+    def encode(model, opts) do
+      model
+      |> Map.take([:message, :id, :inserted_at, :updated_at])
+      |> Poison.Encoder.encode(opts)
+    end
+  end
 end

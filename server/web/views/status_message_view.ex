@@ -12,6 +12,8 @@ defmodule Sitrep.StatusMessageView do
   def render("status_message.json", %{status_message: status_message}) do
     %{id: status_message.id,
       message: status_message.message,
-      member_id: status_message.member_id}
+      member_id: status_message.member_id,
+      inserted_at: status_message.inserted_at,
+      updated_at: status_message.updated_at}
   end
 end

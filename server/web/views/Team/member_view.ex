@@ -1,12 +1,12 @@
-defmodule Sitrep.TeamMemberView do
+defmodule Sitrep.Team.MemberView do
   use Sitrep.Web, :view
 
   def render("index.json", %{members: members}) do
-    %{data: render_many(members, Sitrep.TeamMemberView, "member.json")}
+    %{data: render_many(members, Sitrep.Team.MemberView, "member.json")}
   end
 
   def render("show.json", %{member: member}) do
-    %{data: render_one(member, Sitrep.TeamMemberView, "member.json")}
+    %{data: render_one(member, Sitrep.Team.MemberView, "member.json")}
   end
 
   def render("member.json", %{member: member}) do

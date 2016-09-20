@@ -17,7 +17,11 @@ defmodule Sitrep.Router do
     pipe_through :api # Use the default browser stack
 
     resources "/teams", TeamController, except: [:new, :edit] do
-      resources "/members", MemberController, except: [:new, :edit]
+      resources "/members", Team.MemberController, except: [:new, :edit]
+    end
+
+    resources "/members", MemberController, only: [:index, :show] do
+      resources "/status-messages", StatusMessageController, except: [:new, :edit]
     end
   end
 

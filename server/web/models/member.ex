@@ -8,6 +8,7 @@ defmodule Sitrep.Member do
     field :timezone, :string
     field :phone, :string
     belongs_to :team, Sitrep.Team
+    has_many :status_messages, Sitrep.StatusMessage
 
     timestamps()
   end

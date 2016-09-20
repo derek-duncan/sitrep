@@ -2,9 +2,13 @@ defmodule Sitrep.MemberController do
   use Sitrep.Web, :controller
 
   alias Sitrep.Member
+  alias Sitrep.QueryFilter
 
-  def index(conn, _params) do
-    members = Repo.all(Member)
+  def index(conn, params) do
+    members = Member
+    |> QueryFilter.filter(%Member{}, params, [:timezone])
+    |> Repo.all
+
     render(conn, "index.json", members: members)
   end
 

@@ -2,20 +2,29 @@ defmodule Sitrep.StatusMessageController do
   use Sitrep.Web, :controller
 
   alias Sitrep.StatusMessage
+  alias Sitrep.QueryFilter
 
-  def index(conn, _params) do
-    status_messages = Repo.all(StatusMessage)
+  plug :assign_member
+
+  def index(conn, params) do
+    status_messages = conn.assigns[:member]
+    |> assoc(:status_messages)
+    |> QueryFilter.filter(%StatusMessage{}, params, [:inserted_at])
+    |> Repo.all
+
     render(conn, "index.json", status_messages: status_messages)
   end
 
-  def create(conn, %{"status_message" => status_message_params}) do
-    changeset = StatusMessage.changeset(%StatusMessage{}, status_message_params)
+  def create(conn, %{"status_message" => status_message_params, "member_id" => member_id}) do
+    changeset = conn.assigns[:member]
+    |> build_assoc(:status_messages)
+    |> StatusMessage.changeset(status_message_params)
 
     case Repo.insert(changeset) do
       {:ok, status_message} ->
         conn
         |> put_status(:created)
-        |> put_resp_header("location", member_status_message_path(conn, :show, status_message))
+        |> put_resp_header("location", member_status_message_path(conn, :show, member_id, status_message))
         |> render("show.json", status_message: status_message)
       {:error, changeset} ->
         conn
@@ -25,13 +34,17 @@ defmodule Sitrep.StatusMessageController do
   end
 
   def show(conn, %{"id" => id}) do
-    status_message = Repo.get!(StatusMessage, id)
+    status_message = conn.assigns[:member]
+    |> assoc(:status_messages)
+    |> Repo.get!(id)
+
     render(conn, "show.json", status_message: status_message)
   end
 
   def update(conn, %{"id" => id, "status_message" => status_message_params}) do
-    status_message = Repo.get!(StatusMessage, id)
-    changeset = StatusMessage.changeset(status_message, status_message_params)
+    changeset = conn.assigns[:member]
+    |> build_assoc(:status_messages)
+    |> StatusMessage.changeset(status_message_params)
 
     case Repo.update(changeset) do
       {:ok, status_message} ->
@@ -44,12 +57,24 @@ defmodule Sitrep.StatusMessageController do
   end
 
   def delete(conn, %{"id" => id}) do
-    status_message = Repo.get!(StatusMessage, id)
+    status_message = conn.assigns[:member]
+    |> assoc(:status_messages)
+    |> Repo.get!(id)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
     Repo.delete!(status_message)
 
     send_resp(conn, :no_content, "")
+  end
+
+  defp assign_member(conn, _opts) do
+    case conn.params do
+      %{"member_id" => member_id} ->
+        member = Repo.get(Sitrep.Member, member_id)
+        assign(conn, :member, member)
+      _ ->
+        conn
+    end
   end
 end

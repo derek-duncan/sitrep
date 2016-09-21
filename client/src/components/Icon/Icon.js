@@ -4,9 +4,10 @@ import highFiveIcon from '../../../assets/high-five-icon.svg'
 import pokeIcon from '../../../assets/hand-pointer-icon.svg'
 import checkedIcon from '../../../assets/status-checked-icon.svg'
 import downArrowIcon from '../../../assets/down-arrow-icon.svg'
+import dotsIcon from '../../../assets/dots-icon.svg'
 
 const Icon = (props) => {
-  const { type, ...otherProps } = props;
+  const { type, size, ...otherProps } = props;
 
   let icon;
   switch (type) {
@@ -25,16 +26,40 @@ const Icon = (props) => {
     case 'down-arrow':
       icon = downArrowIcon;
       break;
+    case 'dots':
+      icon = dotsIcon;
+      break;
     default:
       return false;
   }
+
+	let diameter;
+	switch (size) {
+		case 'small':
+			diameter = 12;
+			break;
+		case 'normal':
+			diameter = 20;
+			break;
+		case 'medium':
+			diameter = 25;
+			break;
+		default:
+			diameter = 20;
+	}
+
   return (
-    <img src={icon} role="presentation" style={{ width: 20 }} {...otherProps} />
+    <img src={icon} role="presentation" style={{ width: diameter, minHeight: diameter }} {...otherProps} />
   );
 }
 
 Icon.propTypes = {
   type: PropTypes.string,
+  size: PropTypes.string,
+};
+
+Icon.defaultProps = {
+	size: 'normal',
 };
 
 export default Icon;

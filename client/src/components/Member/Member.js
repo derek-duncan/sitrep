@@ -5,6 +5,7 @@ import './Member.css';
 import Time from '../Time/Time';
 import Icon from '../Icon/Icon';
 import CircleIcon from '../CircleIcon/CircleIcon';
+import MessageBubble from '../MessageBubble/MessageBubble';
 
 class Member extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Member extends Component {
     const { id, first_name, last_name, timezone } = this.props.member;
     const name = `${first_name} ${last_name}`;
     const randomImage = "https://source.unsplash.com/category/people/100x100";
+		const recentMessage = this.state.messages[0] ? this.state.messages[0].message : '';
 
     return (
       <div className="left-align">
@@ -45,19 +47,21 @@ class Member extends Component {
               <div className="a-diamond-crop-img bg-size-cover bg-position-center" style={{ backgroundImage: `url(${randomImage})` }}></div>
             </div>
             <span className="a-avatar-icon absolute">
-              <Icon type="check" style={{ width: 25 }} />
+              <Icon type="check" size="medium" />
             </span>
           </div>
           <div className="flex justify-between col-12 py1 px2">
             <div>
-              <a
-                className="m0 p0 font-size-4 bold line-height-1 text-decoration-none color-gry-light1"
-                href={`http://localhost:4000/api/members/${id}`}
-                target="_blank">
-                {name}
-              </a>
+							<div className="position flex items-center">
+								<a
+									className="m0 p0 font-size-4 bold line-height-1 text-decoration-none color-gry-light1"
+									href={`http://localhost:4000/api/members/${id}`}
+									target="_blank">
+									{name}
+								</a>
+								<MessageBubble text={recentMessage} />
+							</div>
               <p className="m0 p0 font-size-1 color-gry1">Checked in at 10:13 PM</p>
-              <p className="m0 p0 font-size-1 color-gry1">{this.state.messages.length} messages</p>
             </div>
             <div className="flex items-center">
               <span className="mx1">

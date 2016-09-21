@@ -62,6 +62,9 @@ class Template extends Component {
           <button
             className="inline-block p1 mt1 border-none outline-none font-size-2 bold bg-blue1 color-gry-light1 hover-bg-blue2 transition-bg cursor-pointer"
             onClick={this.handleButtonPress}>
+						<CircleIcon color="blue">
+							<Icon type="right-arrow" size="medium" />
+						</CircleIcon>
             Send
           </button>
         </div>

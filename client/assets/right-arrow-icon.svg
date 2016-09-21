@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iteration-2" transform="translate(-1049.000000, -165.000000)" fill="#EEEFF2">
+            <g id="content" transform="translate(347.000000, 89.000000)">
+                <g id="today" transform="translate(10.000000, 32.000000)">
+                    <path d="M703.953607,53.1373626 L692,53.1373626 L692,50.1373626 L703.936849,50.1373626 L700.041519,46.2420332 L702.283552,44 L707.687261,49.4037087 L707.733827,49.3571429 L709.97586,51.599176 L709.929294,51.6457419 L709.97586,51.6923077 L707.733827,53.9343409 L707.687261,53.887775 L702.283552,59.2914837 L700.041519,57.0494505 L703.953607,53.1373626 Z" id="arrow-icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

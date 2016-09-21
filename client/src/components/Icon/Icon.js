@@ -3,7 +3,7 @@ import calendarIcon from '../../../assets/calendar-icon.svg'
 import highFiveIcon from '../../../assets/high-five-icon.svg'
 import pokeIcon from '../../../assets/hand-pointer-icon.svg'
 import checkedIcon from '../../../assets/status-checked-icon.svg'
-import downArrowIcon from '../../../assets/down-arrow-icon.svg'
+import rightArrowIcon from '../../../assets/right-arrow-icon.svg'
 import dotsIcon from '../../../assets/dots-icon.svg'
 
 const Icon = (props) => {
@@ -25,6 +25,9 @@ const Icon = (props) => {
       break;
     case 'down-arrow':
       icon = downArrowIcon;
+      break;
+    case 'right-arrow':
+      icon = rightArrowIcon;
       break;
     case 'dots':
       icon = dotsIcon;

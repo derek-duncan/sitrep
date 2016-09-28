@@ -6,6 +6,7 @@ const CircleIcon = (props) => {
 
   const isLight = color === 'light';
   const isBlue = color === 'blue';
+  const isPrimary = color === 'primary';
   const classes = classNames(
     'flex',
     'items-center',
@@ -19,6 +20,8 @@ const CircleIcon = (props) => {
       'hover-bg-gry-light2': isLight,
       'bg-blue1': isBlue,
       'hover-bg-blue2': isBlue,
+      'bg-primary': isPrimary,
+      'hover-bg-primary': isPrimary,
     },
     className
   );

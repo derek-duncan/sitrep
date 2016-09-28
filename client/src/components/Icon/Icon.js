@@ -5,6 +5,7 @@ import pokeIcon from '../../../assets/hand-pointer-icon.svg'
 import checkedIcon from '../../../assets/status-checked-icon.svg'
 import rightArrowIcon from '../../../assets/right-arrow-icon.svg'
 import dotsIcon from '../../../assets/dots-icon.svg'
+import downArrowIcon from '../../../assets/down-arrow-icon.svg'
 
 const Icon = (props) => {
   const { type, size, ...otherProps } = props;

@@ -134,3 +134,13 @@ a {
 .border-bottom { border-bottom: 1px solid; }
 .border-left { border-left: 1px solid; }
 .border-right { border-right: 1px solid; }
+
+.grow-0 { flex-grow: 0; }
+.grow-1 { flex-grow: 1; }
+.grow-2 { flex-grow: 2; }
+.grow-3 { flex-grow: 3; }
+
+.shrink-0 { flex-shrink: 0; }
+.shrink-1 { flex-shrink: 1; }
+.shrink-2 { flex-shrink: 2; }
+.shrink-3 { flex-shrink: 3; }

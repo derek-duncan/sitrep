@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="10px" viewBox="0 0 9 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
     <title>status-checked-icon</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD" transform="translate(-566.000000, -134.000000)">
-            <g id="team-member" transform="translate(520.000000, 127.000000)">
-                <g id="avatar" transform="translate(0.000000, 3.000000)">
-                    <g id="status-checked-icon" transform="translate(46.000000, 4.000000)">
-                        <circle id="Oval" fill="#50E3C2" cx="13.5" cy="13.5" r="13.5"></circle>
-                        <polyline id="Path-2" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="9.53242838 15.7608221 12.5673638 18.3165572 17.5191005 9.21175096"></polyline>
+        <g id="iteration-2" transform="translate(-383.000000, -264.000000)" fill="#FFFFFF">
+            <g id="content" transform="translate(347.000000, 89.000000)">
+                <g id="members" transform="translate(0.000000, 168.000000)">
+                    <g id="team-member">
+                        <g id="avatar">
+                            <g id="status-checked-icon" transform="translate(36.506849, 6.739726)">
+                                <path d="M2.6415798,9.69295393 C3.36767325,10.304401 4.47198332,10.0961476 4.92550928,9.26224506 L8.31710978,3.02607638 C8.71290902,2.29831649 8.44380174,1.38749185 7.71604185,0.991692611 C6.98828196,0.59589337 6.07745732,0.86500065 5.68165808,1.59276054 L3.17620254,6.20823397 L2.49526415,5.64771685 C1.86159097,5.11409733 0.915313258,5.19520685 0.381693735,5.82888003 C-0.151925789,6.46255322 -0.0708162714,7.40883092 0.562856913,7.94245045 L2.6415798,9.69295393 Z" id="Path-2"></path>
+                            </g>
+                        </g>
                     </g>
                 </g>
             </g>

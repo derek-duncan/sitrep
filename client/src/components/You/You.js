@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import DateToday from '../DateToday/DateToday';
+import Icon from '../Icon/Icon';
+import CircleIcon from '../CircleIcon/CircleIcon';
 
 import './You.css';
 
